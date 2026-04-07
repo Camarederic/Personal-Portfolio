@@ -143,6 +143,7 @@ projects.forEach((project, i) => {
 });
 
 // Projects Button
+const sectionProjects = document.querySelector(".section-projects");
 const projectsBtn = document.querySelector(".projects-btn");
 const projectsBtnText = document.querySelector(".projects-btn span");
 
@@ -156,13 +157,25 @@ projectsBtn.addEventListener("click", (e) => {
   projects.forEach((project, i) => {
     if (i >= 6) {
       if (showHideBool) {
-        project.style.display = "flex";
-        project.style.opacity = "1";
+        setTimeout(() => {
+          project.style.display = "flex";
+          sectionProjects.scrollIntoView({ block: "end" });
+        }, 600);
+
+        setTimeout(() => {
+          project.style.opacity = "1";
+        }, i * 200);
 
         projectsBtnText.textContent = "Show Less";
       } else {
-        project.style.display = "none";
-        project.style.opacity = "0";
+        setTimeout(() => {
+          project.style.display = "none";
+          sectionProjects.scrollIntoView({ block: "end" });
+        }, 1200);
+
+        setTimeout(() => {
+          project.style.opacity = "0";
+        }, i * 100);
 
         projectsBtnText.textContent = "Show More";
       }
