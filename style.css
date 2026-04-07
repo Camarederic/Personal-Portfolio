@@ -314,7 +314,8 @@ html {
   padding: 10rem 10rem 15rem 10rem;
 }
 
-.about-heading {
+.about-heading,
+.projects-heading {
   font-size: 2rem;
   font-weight: 300;
   color: #fff;
@@ -511,6 +512,10 @@ html {
 .projects-btn {
   left: 50%;
   transform: translateX(-50%);
+}
+
+.projects-btn .main-btn-line {
+  transition: all 0.5s;
 }
 
 .change > .main-btn-line:nth-child(1) {
