@@ -184,7 +184,7 @@ projectsBtn.addEventListener("click", (e) => {
         projectsBtnText.textContent = "Show Less";
       } else {
         hideProjects(project, i);
-        
+
         projectsBtnText.textContent = "Show More";
       }
     }
@@ -192,5 +192,21 @@ projectsBtn.addEventListener("click", (e) => {
   showHideBool = !showHideBool;
 });
 // End of Projects Button
-
 // End of Projects
+
+// Services
+document.querySelectorAll(".service-btn").forEach((service) => {
+  service.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const serviceText = service.nextElementSibling;
+    serviceText.classList.toggle("change");
+
+    const rightPosition = serviceText.classList.contains("change")
+      ? `calc(100% - ${getComputedStyle(service.firstElementChild).width})`
+      : 0;
+
+    service.firstElementChild.style.right = rightPosition;
+  });
+});
+// End of Services
